@@ -9,7 +9,7 @@ export class AppComponent  {
 
   name1:any[];
   constructor(private entryService: EntryService){
-    //just comment
+    //just comment1
     this.name1=entryService.getEntries();
   }
 
