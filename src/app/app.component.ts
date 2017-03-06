@@ -1,7 +1,17 @@
 import { Component } from '@angular/core';
+import { EntryService } from './entries/entry.service';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  template: `<estimated-entries [entries]="name1"></estimated-entries>`,
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  {
+
+  name1:any[];
+  constructor(private entryService: EntryService){
+
+    this.name1=entryService.getEntries();
+  }
+
+
+ }
